@@ -1,5 +1,5 @@
 {
-  "name": "boilerplate-react-typescript-sass",
+  "name": "neoflex-test",
   "version": "1.0.0",
   "description": "",
   "main": "src/index.tsx",
@@ -47,6 +47,7 @@
     "fork-ts-checker-webpack-plugin": "^8.0.0",
     "html-loader": "^4.2.0",
     "html-webpack-plugin": "^5.5.0",
+    "mini-css-extract-plugin": "^2.7.5",
     "node-sass": "^8.0.0",
     "prettier": "^2.8.4",
     "sass-loader": "^13.2.0",

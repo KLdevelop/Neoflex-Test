@@ -1,9 +1,8 @@
-.app {
-  background-color: rgb(30, 212, 209);
-}
+@use '/src/assets/fonts/Montserrat/montserrat.module.scss';
 
 html,
 body {
   margin: 0;
   height: 100%;
+  font-family: 'Montserrat';
 }

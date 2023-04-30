@@ -6,6 +6,7 @@ import ForkTsCheckerWebpackPlugin from 'fork-ts-checker-webpack-plugin';
 import ESLintPlugin from 'eslint-webpack-plugin';
 import { TsconfigPathsPlugin } from 'tsconfig-paths-webpack-plugin';
 import FaviconsWebpackPlugin from 'favicons-webpack-plugin';
+import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 
 export interface Configuration extends WebpackConfiguration {
   devServer?: WebpackDevServerConfiguration;
@@ -45,6 +46,10 @@ const config: Configuration = {
         use: ['style-loader', 'css-loader', 'sass-loader'],
       },
       {
+        test: /\.css$/i,
+        use: [MiniCssExtractPlugin.loader, 'css-loader'],
+      },
+      {
         test: /\.tsx?$/,
         use: ['babel-loader', 'ts-loader'],
       },
@@ -62,6 +67,16 @@ const config: Configuration = {
   plugins: [
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, '../public', 'index.html'),
+      publicPath: './',
+      minify: {
+        removeComments: !isDev,
+        collapseWhitespace: !isDev,
+      },
+      meta: {
+        charset: 'UTF-8',
+        viewport:
+          'width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0',
+      },
     }),
     new ForkTsCheckerWebpackPlugin({
       devServer: isDev,
@@ -69,7 +84,11 @@ const config: Configuration = {
     new ESLintPlugin({
       extensions: ['js', 'jsx', 'ts', 'tsx'],
     }),
-    new FaviconsWebpackPlugin(path.resolve(__dirname, '../src/assets/logo/logo.png')),
+    new FaviconsWebpackPlugin({
+      logo: path.resolve(__dirname, '../src/assets/logo/favicon.ico'),
+      cache: true,
+    }),
+    new MiniCssExtractPlugin(),
   ],
   performance: {
     hints: false,
