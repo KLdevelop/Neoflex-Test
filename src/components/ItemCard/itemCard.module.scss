@@ -1,0 +1,72 @@
+.itemCard {
+  padding: 30px;
+  width: 350px;
+  height: 407px;
+  background: #ffffff;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+  border-radius: 30px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  .imageBlock {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  font-weight: 600;
+
+  .nameBlock {
+    display: flex;
+    justify-content: space-between;
+
+    .name {
+      color: #1c1c27;
+    }
+
+    .priceBlock {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+      .price {
+        color: #ffa542;
+        // margin: 0;
+        margin-bottom: 0;
+      }
+
+      .pastPrice {
+        margin-top: 0;
+        font-size: calc(1rem - 3px);
+        color: #ffce7f;
+        text-decoration-line: line-through;
+      }
+    }
+  }
+  .bottomBlock {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    // height: min-content;
+    // line-height: min-content;
+
+    .rating {
+      text-align: center;
+      display: flex;
+      align-items: flex-end;
+      color: #838383;
+
+      .star {
+        margin-right: 10px;
+      }
+    }
+
+    .purchase {
+      color: #000000;
+    }
+  }
+}
