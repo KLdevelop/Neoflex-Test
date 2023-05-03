@@ -51,17 +51,15 @@
     justify-content: space-between;
     align-items: center;
     text-align: center;
-    // height: min-content;
-    // line-height: min-content;
 
-    .rating {
-      text-align: center;
-      display: flex;
-      align-items: flex-end;
-      color: #838383;
+    .ratingBlock {
+      display: grid;
+      gap: 10px;
+      grid-template-columns: 1fr 1fr;
+      align-items: end;
 
-      .star {
-        margin-right: 10px;
+      .rating {
+        color: #838383;
       }
     }
 
