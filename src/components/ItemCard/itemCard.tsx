@@ -16,9 +16,9 @@ export const ItemCard = (props: ItemCardData) => (
       </div>
     </div>
     <div className={styles.bottomBlock}>
-      <div className={styles.rating}>
+      <div className={styles.ratingBlock}>
         <img src={ratingStar} alt="" className={styles.star} />
-        <span>{Math.round(props.rating * 10) / 10}</span>
+        <span className={styles.rating}>{Math.round(props.rating * 10) / 10}</span>
       </div>
       <span className={styles.purchase}>Купить</span>
     </div>
