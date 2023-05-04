@@ -12,7 +12,7 @@ export const ItemCard = (props: ItemCardData) => (
       <p className={styles.name}>{props.name}</p>
       <div className={styles.priceBlock}>
         <p className={styles.price}>{props.price + ' ₽'}</p>
-        <p className={styles.pastPrice}>{props.pastPrice + ' ₽'}</p>
+        <p className={styles.pastPrice}>{props.pastPrice ? props.pastPrice + ' ₽' : ''}</p>
       </div>
     </div>
     <div className={styles.bottomBlock}>
