@@ -1,0 +1,16 @@
+.section {
+  display: grid;
+  gap: 10px;
+  .title {
+    font-size: calc(1em + 2px);
+    font-weight: 600;
+    color: #838383;
+  }
+
+  .itemsBlock {
+    display: grid;
+    width: min-content;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+}
