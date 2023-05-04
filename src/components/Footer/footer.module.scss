@@ -3,7 +3,7 @@
   justify-content: space-between;
   flex-wrap: wrap;
   padding: 30px;
-  width: 100%;
+  // width: 100%;
 
   background: white;
   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
@@ -18,25 +18,25 @@
     }
   }
 
-  .secondBlock,
+  .secondBlock {
+    display: grid;
+    gap: 10px;
+  }
+
   .thirdBlock {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-  }
 
-  .secondBlock {
-    .section:not(:last-child) {
-      margin-bottom: 10px;
-    }
-  }
-
-  .thirdBlock {
     .langSection {
       display: grid;
       width: min-content;
       grid-template-columns: repeat(3, 1fr);
       gap: 10px;
+
+      .lang:hover {
+        cursor: pointer;
+      }
     }
   }
 
@@ -47,6 +47,10 @@
       grid-template-columns: repeat(3, 1fr);
       gap: 10px;
       align-items: center;
+
+      img:hover {
+        cursor: pointer;
+      }
     }
   }
 }
