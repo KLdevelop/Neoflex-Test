@@ -1,12 +1,11 @@
 import React from 'react';
 import styles from './footer.module.scss';
-import { langPlanet, telegramIcon, vkIcon, whatsapp } from 'src/assets/icons';
+import { langPlanet, telegramIcon, vkIcon, whatsappIcon } from 'src/assets/icons';
+import { Logo } from 'src/components';
 
 export const Footer = () => (
   <footer className={styles.footer}>
-    <div className={styles.firstBlock}>
-      <p className={styles.title}>QPICK</p>
-    </div>
+    <Logo />
     <div className={styles.secondBlock}>
       <p className={styles.section}>Избранное</p>
       <p className={styles.section}>Корзина</p>
@@ -24,7 +23,7 @@ export const Footer = () => (
       <div className={styles.snBlock}>
         <img src={vkIcon} alt="" />
         <img src={telegramIcon} alt="" />
-        <img src={whatsapp} alt="" />
+        <img src={whatsappIcon} alt="" />
       </div>
     </div>
   </footer>
