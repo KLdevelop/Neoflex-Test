@@ -16,8 +16,8 @@ export const Footer = () => (
       <p className={styles.section}>Условия сервиса</p>
       <div className={styles.langSection}>
         <img src={langPlanet} alt="" />
-        <p className={styles.lang}>Рус</p>
-        <p className={styles.lang}>Eng</p>
+        <span className={styles.lang}>Рус</span>
+        <span className={styles.lang}>Eng</span>
       </div>
     </div>
     <div className={styles.fourthBlock}>
