@@ -3,7 +3,7 @@ import styles from './footer.module.scss';
 import { langPlanet, telegramIcon, vkIcon, whatsapp } from 'src/assets/icons';
 
 export const Footer = () => (
-  <div className={styles.footer}>
+  <footer className={styles.footer}>
     <div className={styles.firstBlock}>
       <p className={styles.title}>QPICK</p>
     </div>
@@ -27,5 +27,5 @@ export const Footer = () => (
         <img src={whatsapp} alt="" />
       </div>
     </div>
-  </div>
+  </footer>
 );
