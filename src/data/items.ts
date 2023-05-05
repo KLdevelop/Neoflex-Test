@@ -1,5 +1,5 @@
 import { ItemCardData } from 'src/types/interfaces';
-import { borofone, byz, earPods, earPods1, earPods2, gerlax } from 'src/assets/images';
+import { borofone, byz, airPods, earPods, earPods1, gerlax } from 'src/assets/images';
 
 const items: ItemCardData[] = [
   {
@@ -47,7 +47,7 @@ const items: ItemCardData[] = [
     tag: 'headphones',
   },
   {
-    imageUrl: earPods2,
+    imageUrl: airPods,
     name: 'Apple AirPods',
     price: 9527,
     rating: 4.7,
