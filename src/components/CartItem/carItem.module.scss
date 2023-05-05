@@ -14,24 +14,23 @@
 
   .left {
     height: min-content;
-    // display: grid;
-    // text-align: center;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
     height: 100%;
-    // justify-content: space-between;
-    width: 20%;
+    width: 30%;
     margin-right: 20px;
 
     .image {
-      // width: min-content;
       height: 80%;
-      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
       img {
         max-height: 100%;
-        object-fit: contain;
+        max-width: 100%;
       }
     }
 
