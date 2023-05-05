@@ -1,0 +1,9 @@
+.page {
+  // box-sizing: content-box;
+  min-height: 100vh;
+  width: min-content;
+  // height: 100vh;
+  display: grid;
+  align-content: space-between;
+  gap: 20px;
+}
