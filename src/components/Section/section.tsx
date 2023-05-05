@@ -22,8 +22,8 @@ export const Section = (props: Props) => {
     <div className={styles.section}>
       <p className={styles.title}>{props.title}</p>
       <div className={styles.itemsBlock}>
-        {items.map((item, ind) => (
-          <ItemCard {...item} key={ind} />
+        {items.map((item) => (
+          <ItemCard {...item} key={item.id} />
         ))}
       </div>
     </div>
