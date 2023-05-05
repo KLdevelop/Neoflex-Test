@@ -1,11 +1,9 @@
 import React, { Dispatch } from 'react';
 import styles from './carItem.module.scss';
-import { ItemCardData } from 'src/types/interfaces';
+import { CartItem as CartItemData } from 'src/types/interfaces';
 import { deleteIcon } from 'src/assets/icons';
 
-interface Props {
-  item: ItemCardData;
-  count: number;
+interface Props extends CartItemData {
   setCount: Dispatch<number>;
 }
 
