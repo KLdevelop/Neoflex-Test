@@ -1,8 +1,7 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import styles from './section.module.scss';
 import { ItemTag } from 'src/types/interfaces';
-import { useAppDispatch, useAppSelector } from 'src/hooks';
-import { fetchItems } from 'src/models/thunks';
+import { useAppSelector } from 'src/hooks';
 import { ItemCard } from 'src/components';
 
 interface Props {
@@ -11,12 +10,7 @@ interface Props {
 }
 
 export const Section = (props: Props) => {
-  const dispatch = useAppDispatch();
   const items = useAppSelector((state) => state.items.items[props.tag]);
-
-  useEffect(() => {
-    dispatch(fetchItems(props.tag));
-  }, [dispatch, props.tag]);
 
   return (
     <div className={styles.section}>
