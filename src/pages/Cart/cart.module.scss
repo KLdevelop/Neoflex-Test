@@ -1,0 +1,20 @@
+.cart {
+  width: 1100px;
+
+  .title {
+    font-weight: 600;
+    font-size: 20px;
+    margin-bottom: 15px;
+  }
+
+  .content {
+    display: flex;
+    justify-content: space-between;
+
+    .items {
+      display: grid;
+      height: min-content;
+      gap: 15px;
+    }
+  }
+}
