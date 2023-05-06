@@ -4,19 +4,19 @@ import { addCartItem, fetchCart, decreaseCartItem, deleteCartItem } from 'src/mo
 
 interface InitialState {
   cart: Cart;
+  summary: number;
 }
 
 const initialState: InitialState = {
   cart: {
     items: {},
   },
+  summary: 0,
 };
 
 export const cartReducer = createReducer(initialState, (builder) => {
   builder
-    .addCase(fetchCart.fulfilled, (state, action) => {
-      state.cart = action.payload;
-    })
+    .addCase(fetchCart.fulfilled, (_, action) => action.payload)
     .addCase(addCartItem.fulfilled, (state, action) => {
       const cartItem = action.payload;
       state.cart.items[cartItem.item.id] = cartItem;

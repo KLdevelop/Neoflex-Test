@@ -1,5 +1,4 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
-import { useAppSelector } from 'src/hooks';
 import { Cart, ItemCardData } from 'src/types/interfaces';
 
 const storage = sessionStorage;
@@ -7,12 +6,15 @@ const storage = sessionStorage;
 export const fetchCart = createAsyncThunk('cart/fetchCart', async () => {
   const cartJSON = storage.getItem('cart');
   const cart: Cart = cartJSON ? JSON.parse(cartJSON) : { items: {} };
+  let summary = 0;
+  Object.entries(cart.items).forEach(([, v]) => (summary += v.item.price * v.count));
 
-  return cart;
+  return { cart, summary };
 });
 
 export const addCartItem = createAsyncThunk('cart/addCartItem', async (item: ItemCardData) => {
-  const { cart } = useAppSelector((state) => state.cart);
+  const cartJSON = storage.getItem('cart');
+  const cart: Cart = cartJSON ? JSON.parse(cartJSON) : { items: {} };
   const id = item.id;
 
   if (cart.items[id]) cart.items[id].count++;
@@ -23,7 +25,8 @@ export const addCartItem = createAsyncThunk('cart/addCartItem', async (item: Ite
 });
 
 export const decreaseCartItem = createAsyncThunk('cart/decreaseCartItem', async (id: number) => {
-  const { cart } = useAppSelector((state) => state.cart);
+  const cartJSON = storage.getItem('cart');
+  const cart: Cart = cartJSON ? JSON.parse(cartJSON) : { items: {} };
 
   if (cart.items[id].count > 1) cart.items[id].count--;
 
@@ -32,7 +35,8 @@ export const decreaseCartItem = createAsyncThunk('cart/decreaseCartItem', async 
 });
 
 export const deleteCartItem = createAsyncThunk('cart/deleteCartItem', async (id: number) => {
-  const { cart } = useAppSelector((state) => state.cart);
+  const cartJSON = storage.getItem('cart');
+  const cart: Cart = cartJSON ? JSON.parse(cartJSON) : { items: {} };
 
   delete cart.items[id];
   storage.setItem('cart', JSON.stringify(cart));
