@@ -3,4 +3,8 @@
   font-size: 25px;
   line-height: 30px;
   color: #101010;
+
+  &:hover {
+    cursor: pointer;
+  }
 }

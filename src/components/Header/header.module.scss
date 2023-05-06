@@ -13,5 +13,9 @@
     grid-template-columns: repeat(2, 1fr);
     align-items: center;
     gap: 25px;
+
+    img:hover {
+      cursor: pointer;
+    }
   }
 }
