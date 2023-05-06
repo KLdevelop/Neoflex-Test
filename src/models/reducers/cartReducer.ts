@@ -20,12 +20,15 @@ export const cartReducer = createReducer(initialState, (builder) => {
     .addCase(addCartItem.fulfilled, (state, action) => {
       const cartItem = action.payload;
       state.cart.items[cartItem.item.id] = cartItem;
+      state.summary += cartItem.item.price;
     })
     .addCase(decreaseCartItem.fulfilled, (state, action) => {
       const cartItem = action.payload;
       state.cart.items[cartItem.item.id] = cartItem;
+      state.summary -= cartItem.item.price;
     })
     .addCase(deleteCartItem.fulfilled, (state, action) => {
-      state.cart = action.payload;
+      state.cart = action.payload.cart;
+      state.summary -= action.payload.price;
     });
 });

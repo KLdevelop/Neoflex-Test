@@ -28,9 +28,11 @@ export const decreaseCartItem = createAsyncThunk('cart/decreaseCartItem', async 
   const cartJSON = storage.getItem('cart');
   const cart: Cart = cartJSON ? JSON.parse(cartJSON) : { items: {} };
 
-  if (cart.items[id].count > 1) cart.items[id].count--;
+  if (cart.items[id].count > 1) {
+    cart.items[id].count--;
+    storage.setItem('cart', JSON.stringify(cart));
+  } else throw Error('1 is lowest value');
 
-  storage.setItem('cart', JSON.stringify(cart));
   return cart.items[id];
 });
 
@@ -38,8 +40,12 @@ export const deleteCartItem = createAsyncThunk('cart/deleteCartItem', async (id:
   const cartJSON = storage.getItem('cart');
   const cart: Cart = cartJSON ? JSON.parse(cartJSON) : { items: {} };
 
+  if (!cart.items[id]) throw Error("item doesn't exists");
+
+  const { price } = cart.items[id].item;
+
   delete cart.items[id];
   storage.setItem('cart', JSON.stringify(cart));
 
-  return cart;
+  return { cart, price };
 });
