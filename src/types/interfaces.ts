@@ -18,3 +18,5 @@ export interface CartItem {
 export interface Cart {
   items: Record<number, CartItem>;
 }
+
+export type Language = 'rus' | 'eng';
