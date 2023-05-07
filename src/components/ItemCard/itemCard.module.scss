@@ -46,6 +46,7 @@
       }
     }
   }
+
   .bottomBlock {
     display: flex;
     flex-direction: row;
@@ -66,6 +67,10 @@
 
     .purchase {
       color: #000000;
+
+      &:hover {
+        cursor: pointer;
+      }
     }
   }
 }

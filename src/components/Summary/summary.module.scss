@@ -1,0 +1,42 @@
+.summary {
+  width: 450px;
+  height: 114px;
+  background: #ffffff;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+  border-radius: 30px;
+
+  font-size: 1rem;
+  font-weight: 600;
+
+  .summaryBlock,
+  .order {
+    height: 50%;
+  }
+
+  .summaryBlock {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+
+    span {
+      font-size: calc(1em - 2px);
+      color: #000000;
+    }
+  }
+
+  .order {
+    width: 100%;
+    background: #101010;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
+    border: none;
+
+    color: #ffffff;
+    font-size: 1em;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}

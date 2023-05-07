@@ -5,7 +5,6 @@ import HtmlWebpackPlugin from 'html-webpack-plugin';
 import ForkTsCheckerWebpackPlugin from 'fork-ts-checker-webpack-plugin';
 import ESLintPlugin from 'eslint-webpack-plugin';
 import { TsconfigPathsPlugin } from 'tsconfig-paths-webpack-plugin';
-import FaviconsWebpackPlugin from 'favicons-webpack-plugin';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 
 export interface Configuration extends WebpackConfiguration {
@@ -23,7 +22,6 @@ const config: Configuration = {
     chunkFilename: isDev ? '[name].chunk.js' : '[name].[fullhash:8].chunk.js',
     path: path.resolve(__dirname, '../dist'),
     clean: true,
-    publicPath: '/',
   },
   resolve: {
     extensions: ['.js', '.jsx', '.ts', '.tsx', '.css', '.scss', '.json'],
@@ -72,6 +70,7 @@ const config: Configuration = {
         removeComments: !isDev,
         collapseWhitespace: !isDev,
       },
+      title: 'QPICK',
       meta: {
         charset: 'UTF-8',
         viewport:
@@ -83,10 +82,6 @@ const config: Configuration = {
     }),
     new ESLintPlugin({
       extensions: ['js', 'jsx', 'ts', 'tsx'],
-    }),
-    new FaviconsWebpackPlugin({
-      logo: path.resolve(__dirname, '../src/assets/logo/favicon.ico'),
-      cache: true,
     }),
     new MiniCssExtractPlugin(),
   ],
