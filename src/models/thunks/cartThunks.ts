@@ -7,9 +7,11 @@ export const fetchCart = createAsyncThunk('cart/fetchCart', async () => {
   const cartJSON = storage.getItem('cart');
   const cart: Cart = cartJSON ? JSON.parse(cartJSON) : { items: {} };
   let summary = 0;
-  Object.entries(cart.items).forEach(([, v]) => (summary += v.item.price * v.count));
 
-  return { cart, summary };
+  const items = Object.entries(cart.items);
+  items.forEach(([, v]) => (summary += v.item.price * v.count));
+
+  return { cart, summary, counter: items.length };
 });
 
 export const addCartItem = createAsyncThunk('cart/addCartItem', async (item: ItemCardData) => {
@@ -42,7 +44,7 @@ export const deleteCartItem = createAsyncThunk('cart/deleteCartItem', async (id:
 
   if (!cart.items[id]) throw Error("item doesn't exists");
 
-  const { price } = cart.items[id].item;
+  const price = cart.items[id].item.price * cart.items[id].count;
 
   delete cart.items[id];
   storage.setItem('cart', JSON.stringify(cart));
