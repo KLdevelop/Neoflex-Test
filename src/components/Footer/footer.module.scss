@@ -32,7 +32,16 @@
       grid-template-columns: repeat(3, 1fr);
       gap: 10px;
 
-      .lang:hover {
+      .curLang {
+        color: #ffa542;
+      }
+
+      .lang {
+        color: #101010;
+      }
+
+      .lang:hover,
+      .curLang:hover {
         cursor: pointer;
       }
     }
