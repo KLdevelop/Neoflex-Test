@@ -16,9 +16,13 @@ const initialState: InitialState = {
 };
 
 export const itemsReducer = createReducer(initialState, (builder) => {
-  builder.addCase(fetchItems.fulfilled, (state, action) => {
+  builder.addCase(fetchItems.fulfilled, (_, action) => {
+    const state = structuredClone(initialState);
+
     action.payload.forEach((item) => {
       state.items[item.tag].push(item);
     });
+
+    return state;
   });
 });
