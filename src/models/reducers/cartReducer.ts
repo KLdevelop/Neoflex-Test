@@ -21,12 +21,14 @@ export const cartReducer = createReducer(initialState, (builder) => {
     .addCase(fetchCart.fulfilled, (_, action) => action.payload)
     .addCase(addCartItem.fulfilled, (state, action) => {
       const cartItem = action.payload;
+
       state.cart.items[cartItem.item.id] = cartItem;
       state.summary += cartItem.item.price;
       if (cartItem.count === 1) state.counter++;
     })
     .addCase(decreaseCartItem.fulfilled, (state, action) => {
       const cartItem = action.payload;
+
       state.cart.items[cartItem.item.id] = cartItem;
       state.summary -= cartItem.item.price;
     })

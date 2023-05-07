@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react';
 import { Section } from 'src/components';
-import styles from './itemsPage.module.scss';
 import { useAppDispatch } from 'src/hooks';
 import { fetchItems } from 'src/models/thunks';
+import styles from './itemsPage.module.scss';
 
 export const ItemsPage = () => {
   const dispatch = useAppDispatch();

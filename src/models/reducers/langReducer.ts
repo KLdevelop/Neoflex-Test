@@ -5,5 +5,5 @@ import { setLanguage } from '../actions';
 const initialState = 'rus' as Language;
 
 export const langReducer = createReducer(initialState, (builder) => {
-  builder.addCase(setLanguage, (state, action) => action.payload);
+  builder.addCase(setLanguage, (_, action) => action.payload);
 });

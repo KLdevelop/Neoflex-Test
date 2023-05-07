@@ -1,10 +1,10 @@
 import React, { useEffect } from 'react';
-import styles from './header.module.scss';
 import { Logo } from 'src/components';
 import { cartIcon, favouriteIcon } from 'src/assets/icons';
 import { useNavigate } from 'react-router';
 import { useAppDispatch, useAppSelector } from 'src/hooks';
 import { fetchCart } from 'src/models/thunks';
+import styles from './header.module.scss';
 
 export const Header = () => {
   const navigate = useNavigate();

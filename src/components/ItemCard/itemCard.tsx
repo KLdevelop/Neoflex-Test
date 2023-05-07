@@ -1,9 +1,9 @@
 import React from 'react';
-import styles from './itemCard.module.scss';
 import { ItemCardData } from 'src/types/interfaces';
 import { ratingStar } from 'src/assets/icons';
 import { useAppDispatch } from 'src/hooks';
 import { addCartItem } from 'src/models/thunks';
+import styles from './itemCard.module.scss';
 
 export const ItemCard = (item: ItemCardData) => {
   const dispatch = useAppDispatch();

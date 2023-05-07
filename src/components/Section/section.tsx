@@ -1,8 +1,8 @@
 import React from 'react';
-import styles from './section.module.scss';
 import { ItemTag } from 'src/types/interfaces';
 import { useAppSelector } from 'src/hooks';
 import { ItemCard } from 'src/components';
+import styles from './section.module.scss';
 
 interface Props {
   title: string;

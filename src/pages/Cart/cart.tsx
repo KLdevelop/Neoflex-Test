@@ -1,7 +1,7 @@
 import React from 'react';
-import styles from './cart.module.scss';
 import { CartItem, Summary } from 'src/components';
 import { useAppSelector } from 'src/hooks';
+import styles from './cart.module.scss';
 
 export const Cart = () => {
   const items = Object.entries(useAppSelector((state) => state.cart.cart.items));

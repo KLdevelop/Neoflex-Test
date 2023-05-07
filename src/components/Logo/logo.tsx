@@ -1,6 +1,6 @@
 import React from 'react';
-import styles from './logo.module.scss';
 import { useNavigate } from 'react-router';
+import styles from './logo.module.scss';
 
 export const Logo = () => {
   const navigate = useNavigate();

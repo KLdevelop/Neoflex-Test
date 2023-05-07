@@ -8,6 +8,7 @@ import { setLanguage } from 'src/models/actions';
 export const Footer = () => {
   const { lang } = useAppSelector((state) => state);
   const dispatch = useAppDispatch();
+
   return (
     <footer className={styles.footer}>
       <Logo />
