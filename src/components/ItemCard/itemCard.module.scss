@@ -17,6 +17,10 @@
     justify-content: center;
     align-items: center;
     height: 75%;
+
+    img {
+      object-fit: contain;
+    }
   }
 
   font-weight: 600;

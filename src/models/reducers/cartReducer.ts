@@ -5,6 +5,7 @@ import { addCartItem, fetchCart, decreaseCartItem, deleteCartItem } from 'src/mo
 interface InitialState {
   cart: Cart;
   summary: number;
+  counter: number;
 }
 
 const initialState: InitialState = {
@@ -12,6 +13,7 @@ const initialState: InitialState = {
     items: {},
   },
   summary: 0,
+  counter: 0,
 };
 
 export const cartReducer = createReducer(initialState, (builder) => {
@@ -21,6 +23,7 @@ export const cartReducer = createReducer(initialState, (builder) => {
       const cartItem = action.payload;
       state.cart.items[cartItem.item.id] = cartItem;
       state.summary += cartItem.item.price;
+      if (cartItem.count === 1) state.counter++;
     })
     .addCase(decreaseCartItem.fulfilled, (state, action) => {
       const cartItem = action.payload;
@@ -30,5 +33,6 @@ export const cartReducer = createReducer(initialState, (builder) => {
     .addCase(deleteCartItem.fulfilled, (state, action) => {
       state.cart = action.payload.cart;
       state.summary -= action.payload.price;
+      state.counter--;
     });
 });
